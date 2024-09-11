@@ -31,6 +31,19 @@ object rolando {
 	var property capacidad = 2
 	const casa = castillo
 	const property historia = []
+	var poderBase = 5
+
+	method poderBase(){
+		return poderBase
+	}
+	method luchar(){
+		self.usarArtefactos()
+		poderBase +1
+	}
+	method usarArtefactos(){
+		artefactos.forEach({artefacto => artefacto.serUsado()})
+
+	}
 
 	method encontrar(artefacto) {
 		if(artefactos.size() < capacidad) {
@@ -52,5 +65,5 @@ object rolando {
 		return self.posesiones().contains(artefacto)	
 	}
 		
-}
+	}
 
